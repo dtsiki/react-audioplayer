@@ -3,3 +3,9 @@
     transform: scale(1.1);
   }
 }
+
+@keyframes neon {
+  50% {
+    box-shadow: 0 0 20px rgba($color--violet, 0.8);
+  }
+}
