@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+
 import { IAudioPlayer } from '../interfaces';
 
 const useAudioPlayer = (): IAudioPlayer => {
@@ -17,6 +18,12 @@ const useAudioPlayer = (): IAudioPlayer => {
 
       if (fileName) {
         setAudioName(fileName);
+      }
+
+      const savedCurrentTime = localStorage.getItem(fileName);
+
+      if (savedCurrentTime) {
+        audio.currentTime = Number(savedCurrentTime);
       }
 
       setDuration(audio.duration);
